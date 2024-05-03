@@ -1,0 +1,42 @@
+[
+  {
+    "bindings": {
+      "ctrl-p": "file_finder::Toggle",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-t": ["task::Spawn", { "task_name": "phpunit-test-file" }],
+      "ctrl-enter": "editor::ShowCompletions",
+      "ctrl-space": ["workspace::SendKeystrokes", "enter"],
+      "space o": "editor::GoToDefinition"
+    }
+  },
+  {
+    "context": "Editor && mode == full && inline_completion",
+    "bindings": {
+      "ctrl-j": "editor::NextInlineCompletion",
+      "ctrl-k": "editor::PreviousInlineCompletion",
+      "ctrl-y": "editor::AcceptPartialInlineCompletion"
+    }
+  },
+  {
+    "context": "Editor && editing",
+    "bindings": {
+      "ctrl-h": ["workspace::SendKeystrokes", "backspace"]
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "ctrl-k": "editor::ContextMenuPrev",
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-space": "editor::ConfirmCompletion"
+    }
+  }
+]

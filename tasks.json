@@ -1,0 +1,8 @@
+[
+  {
+    "label": "phpunit-test-file",
+    // "command": "docker compose exec bindhq-fpm rm -rf var/cache/test/twig; docker compose exec bindhq-fpm php -d memory_limit=2G vendor/bin/phpunit --order-by default ",
+    "command": "vendor/bin/phpunit",
+    "args": ["$ZED_FILE"]
+  }
+]
